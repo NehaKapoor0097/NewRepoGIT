@@ -1,0 +1,56 @@
+1.WAP to select an option from auto suggestion list
+2.Mouse Actions:How to perform mouse hover on an element
+3.How to perform right click on an element
+4.How to perform double click on an element
+5 How to perform click on an element using action class
+6.How to perform drag and drop on element
+7.How to perform scroll horizontal and vertical
+8.Github
+
+
+1.WebDriver driver=new ChromeDriver();
+WebElement element=driver.findElement(By.name("q")).sendKeys("JAVA");
+List<WebElement> options=driver.findElements(By.xpath("//input[text]"));
+int size=options.getsize();
+for(int i=0;i<size;i++){
+WebELement option=options.get(i);
+String text=option.getText();
+if(text.equals("JavaScript")){
+option.click();
+break;
+}
+}
+act.moveToElement(source).clickAndHold().moveToElement(target).release().build().perform()
+2.WebDriver driver=new ChromeDriver();
+WebELement element=driver.findELement(By.id("name"));
+Actions act=new Actions(driver);
+act.moveToELement(element).perform();
+
+3.WebDriver driver=new ChromeDriver();
+WebELement element=driver.findELement(By.id("name"));
+Actions act=new Actions(driver);
+act.contextClick(element).perform();
+or
+act.moveToElement(element).contextClick().build().perform()
+
+
+4.
+WebDriver driver=new ChromeDriver();
+WebELement element=driver.findELement(By.id("name"));
+Actions act=new Actions(driver);
+act.doubleClick(element).perform();
+or
+act.moveToElement(element).doubleClick().build().perform()
+
+5.act.click(element).perform()
+
+6.to perform drag and drop we need source and target locators.
+Ensure element is dragging.when we mouse hover the sign changes to draggable symbol
+WebELement source=driver.findELement(By.id());
+WebELement destination=driver.findELement(By.id());
+Actions act=new Actions(driver);
+act.dragAndDrop(source,target).perform;
+or
+act.moveToElement(element).clickAndHold().release().build().perform().
+ 
+
